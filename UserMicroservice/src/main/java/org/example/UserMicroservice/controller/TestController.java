@@ -15,4 +15,9 @@ public class TestController {
     public String test(){
         return "It is working on port " + environment.getProperty("local.server.port");
     }
+
+    @GetMapping(value = "/test2")
+    public String test2(){
+        return "It is working on port " + environment.getProperty("local.server.port");
+    }
 }

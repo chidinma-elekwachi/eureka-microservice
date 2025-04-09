@@ -10,8 +10,16 @@ spring:
         uri: lb://UserMicroservice
         predicates[0]: Path=/test
         predicates[1]: Method=GET
-        predicates[2]: Header=Authorization, (.*)
-        filter[0]: RemoveRequestHeader=Cookie
+        predicates[2]: Header=Authorization, Bearer (.*)
+        filters[0]: RemoveRequestHeader=Cookie
+        filters[1]: CustomFilter
+      routes[1]:
+        id: test2
+        uri: lb://UserMicroservice
+        predicates[0]: Path=/test2
+        predicates[1]: Method=GET
+        predicates[2]: Header=Authorization, Bearer (.*)
+        filters[0]: RemoveRequestHeader=Cookie
 eureka:
   client:
     serviceUrl:
