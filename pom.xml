@@ -16,10 +16,13 @@
   <modules>
     <module>CoreLibrary</module>
     <module>UserMicroservice</module>
+    <module>DiscoveryService</module>
+    <module>ApiGateway</module>
 
   </modules>
 
   <dependencies>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
