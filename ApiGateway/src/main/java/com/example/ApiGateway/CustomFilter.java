@@ -16,6 +16,7 @@ public class CustomFilter extends AbstractGatewayFilterFactory<CustomFilter.Conf
         return ((exchange, chain) -> {
             String authorization = exchange.getRequest().getHeaders().get("Authorization").get(0);
             String oauthKey = authorization.replace("Bearer ", "");
+            System.out.println("This is a custom filter");
             if (oauthKey.length() >= 20){
                 return chain.filter(exchange);
             }
