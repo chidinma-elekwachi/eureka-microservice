@@ -1,0 +1,14 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: ConfigServer
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/chidinma-elekwachi/niit-config-repo
+          username: chidinma-elekwachi
+          password: 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
+#          cloneOnStart: true
+          #defaultLabel: master
