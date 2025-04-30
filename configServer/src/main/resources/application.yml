@@ -9,6 +9,6 @@ spring:
         git:
           uri: https://github.com/chidinma-elekwachi/niit-config-repo
           username: chidinma-elekwachi
-          password: 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
+          password: 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
 #          cloneOnStart: true
           #defaultLabel: master
