@@ -10,13 +10,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/api/v1/products")
-@RequiredArgsConstructor
 public class ProductController {
 
     private final ProductService productService;
 
-    @PostMapping
-    public String createProduct(@RequestBody ProductRequest productRequest){
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
 
+    @PostMapping
+    public String createProduct(@RequestBody ProductRequest request){
+        String productId = productService.addNewProduct(request);
+
+        return productId;
     }
 }
