@@ -6,6 +6,8 @@ import com.example.ProductMicroservice.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 @RequiredArgsConstructor
@@ -17,13 +19,18 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
-    public String addNewProduct(ProductRequest request) {
+    public String addNewProduct(ProductRequest request, String userId) {
         Product product = new Product();
         product.setName(request.getName());
         product.setDescription(request.getDescription());
         product.setPrice(request.getPrice());
+        product.setUserId(userId);
         product.setAvailableQuantity(request.getAvailableQuantity());
 
         return  productRepository.save(product).getId();
+    }
+
+    public List<Product> findAllProductByUser(String userId) {
+        return productRepository.findByUserId(userId);
     }
 }

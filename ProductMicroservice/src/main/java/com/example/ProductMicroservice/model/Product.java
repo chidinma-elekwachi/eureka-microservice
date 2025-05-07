@@ -18,8 +18,17 @@ public class Product {
     private String id;
     private String name;
     private double price;
+    private String userId;
     private int availableQuantity;
     private String description;
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 
     public String getId() {
         return id;
