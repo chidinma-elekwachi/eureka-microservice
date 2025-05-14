@@ -31,7 +31,7 @@ public class UserController {
         User user = userService.findByUserId(userId);
 
         // Get product from product-service
-        String url = "http://ProductMicroservice/api/v1/products" + userId;
+        String url = "http://ProductMicroservice/api/v1/products/" + userId;
         ParameterizedTypeReference<List<Product>> responseType = new ParameterizedTypeReference<>() {};
         ResponseEntity<List<Product>> response = restTemplate.exchange(
                 url,
